@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
@@ -22,7 +22,7 @@ export default function App() {
   return (
     <>
       <View style={styles.container}>
-        <Text style={ styles.title }>Hello, world</Text>
+        <Text style={ styles.title }>Hello, world!</Text>
       </View>
     </>
   );
