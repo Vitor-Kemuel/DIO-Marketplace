@@ -1,10 +1,17 @@
 import React from 'react';
-import { Container } from './styles';
+import {
+  Container,
+  PriceContainer,
+  Product,
+  ProductButton,
+  ProductButtonText,
+  ProductContainer,
+  ProductImage,
+  ProductList,
+  ProductPrice,
+  ProductTitle
+ } from './styles';
 
-export default function Catalog() {
-  return (
-    <>
-      <Container />
-    </>
-  );
+export default function App() {
+  return <Container />
 };
