@@ -24,14 +24,14 @@ export const Product = styled.View`
   flex: 1;
   margin: 8px;
   background: #626878;
-  padding: 32px 12;
+  padding: 32px 12px;
   border-radius: 25px;
 `;
 
 export const ProductImage = styled.Image`
-  width: 90%;
-  height: 220px;
-  align-items: center;
+  width: 100%;
+  height: 200px;
+  align-self: center;
 `;
 
 export const ProductTitle = styled.Text`
@@ -45,7 +45,7 @@ export const ProductTitle = styled.Text`
 `;
 
 export const PriceContainer = styled.View`
-  Flex-direction: row;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin-top: auto;
@@ -60,8 +60,8 @@ export const ProductPrice = styled.Text`
 
 export const ProductButton = styled.TouchableOpacity`
   background: #4f5564;
-  padding 4px 8px;
-  border-radius; 100px;
+  padding: 4px 8px;
+  border-radius: 100px;
   align-items: center;
   flex-direction: row;
 `;
