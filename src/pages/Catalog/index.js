@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import View from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import FloatingCart from '../../components/FloatingCart';
 import formatValue from '../../utils/formatValue';
 import {
   Container,
@@ -29,10 +30,10 @@ export default function Catalog() {
       <ProductContainer>
         <ProductList
           data={products}
-          keyExtrator={(item) => item.id}
+          keyExtractor={(item) => item.id}
           listFooterComponents={ <View /> }
           listFooterComponentsStyle={{
-            heigth: 80,
+            height: 80,
           }}
           renderItem={({item}) => (
             <Product>
@@ -49,6 +50,7 @@ export default function Catalog() {
           )}
         />
       </ProductContainer>
+      <FloatingCart />
     </Container>
   );
 };
