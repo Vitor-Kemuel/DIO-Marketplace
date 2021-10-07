@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 import { Image } from 'react-native';
 
-import foto from '../../assets/logo.png';
+import Logo from '../../assets/logo.png';
 
 import { Container } from './styles';
 
-const  Header  = () =>{
-  return(
+const Header = () => {
+  return (
     <Container>
-      <Image source={foto} />
+      <Image source={Logo} />
     </Container>
-  )
-}
+  );
+};
 
 export default Header;

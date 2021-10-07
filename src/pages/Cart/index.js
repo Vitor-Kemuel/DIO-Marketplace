@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { View } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
@@ -35,6 +35,18 @@ export default function Cart() {
     },
   ]);
 
+  const cartSize = useMemo(() => {
+    return products.length || 0;
+  }, [products]);
+
+  const cartTotal = useMemo(() => {
+    const cartAmount = products.reduce((acc, product) => {
+      const totalPrice = acc + (product.price * product.quantity);
+      return totalPrice;
+    }, 0);
+
+    return formatValue(cartAmount)
+  }, [products]);
   return (
     <Container>
       <ProductContainer>
@@ -76,8 +88,8 @@ export default function Cart() {
       </ProductContainer>
       <TotalProductsContainer>
         <FeatherIcon name="shopping-cart" color="#fff" size={24} />
-        <TotalProductsText>2 itens</TotalProductsText>
-        <SubtotalValue>R$100,00</SubtotalValue>
+        <TotalProductsText>{cartSize} {cartSize == 1 ? 'item' : 'itens'}</TotalProductsText>
+        <SubtotalValue>{cartTotal}</SubtotalValue>
       </TotalProductsContainer>
     </Container>
   );
