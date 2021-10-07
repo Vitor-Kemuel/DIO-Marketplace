@@ -1,11 +1,7 @@
 import styled from 'styled-components/native';
 
-
 export const Container = styled.View`
-  flex: 1;
   bottom: 0px;
-  right: 0px;
-  left: 0px;
   position: absolute;
   background: #e83f5b;
   padding: 0px 18px;
@@ -40,4 +36,3 @@ export const CartButtonText = styled.Text`
   margin-left: 15px;
   margin-right: auto;
 `;
-

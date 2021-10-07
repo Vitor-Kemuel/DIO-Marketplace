@@ -3,7 +3,7 @@ import { FlatList } from 'react-native';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  padding: 30px;
+  align-items: center;
 `;
 
 export const ProductContainer = styled.View`
@@ -29,8 +29,8 @@ export const Product = styled.View`
 `;
 
 export const ProductImage = styled.Image`
-  width: 100%;
-  height: 200px;
+  width: 90%;
+  height: 220px;
   align-self: center;
 `;
 
