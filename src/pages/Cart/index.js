@@ -23,16 +23,17 @@ import {
 } from './styles';
 
 import formatValue from "../../utils/formatValue";
+import EmptyCart from "../../components/EmptyCart";
 
 export default function Cart() {
   const [products, setProducts] = useState([
-    {
-      id: '1',
-      title: 'Assinatura Trimestral',
-      image_url: 'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
-      quantity: 1,
-      price: 150,
-    },
+    // {
+    //   id: '1',
+    //   title: 'Assinatura Trimestral',
+    //   image_url: 'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
+    //   quantity: 1,
+    //   price: 150,
+    // },
   ]);
 
   const cartSize = useMemo(() => {
@@ -53,6 +54,7 @@ export default function Cart() {
         <ProductList
           data={products}
           keyExtractor={(item) => item.id}
+          ListEmptyComponent={<EmptyCart />}
           ListFooterComponent={<View />}
           ListFooterComponentStyle={{
             height: 80,
