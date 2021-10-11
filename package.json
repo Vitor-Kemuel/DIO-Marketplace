@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
+    "axios": "^0.22.0",
     "intl": "^1.2.5",
     "npm": "^7.24.1",
     "pod-install": "^0.1.27",

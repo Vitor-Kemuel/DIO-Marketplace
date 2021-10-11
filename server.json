@@ -1,0 +1,17 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Assinatura Trimestral",
+      "image_url": "https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc",
+      "price": 150
+    },
+    {
+      "id": "2",
+      "title": "Assinatura Anual",
+      "image_url": "https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/annual_subscription_qyolci",
+      "price": 540
+    }
+  ]
+}
+

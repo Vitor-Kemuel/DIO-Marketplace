@@ -11,17 +11,17 @@ import Cart from './pages/Cart';
 const Stack = createStackNavigator();
 
 export default function Routes(){
-  return(
+  return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
-          headerShow: true,
-          cardStyle: { backgroundColor: '#313746' }
+          headerShown: true,
+          cardStyle: { backgroundColor: '#313746' },
         }}
         initialRouteName="Catalog"
       >
         <Stack.Screen
-          name = "Catalog"
+          name="Catalog"
           component={Catalog}
           options={{
             headerShown: true,
@@ -46,5 +46,5 @@ export default function Routes(){
         />
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
