@@ -45,6 +45,19 @@ export default function Cart() {
 
     return formatValue(cartAmount)
   }, [products]);
+
+  function increment(product) {
+    dispatch(CartAction.updateAmountRequest(product.id, product.amount + 1));
+  }
+
+  function decrement(product) {
+    dispatch(CartAction.updateAmountRequest(product.id, product.amount - 1));
+  }
+
+  function removeFromCart(id) {
+    dispatch(CartAction.removeFromCart(id));
+  }
+
   return (
     <Container>
       <ProductContainer>
@@ -74,10 +87,12 @@ export default function Cart() {
                 </ProductPriceContainer>
               </ProductTitleContainer>
               <ActionContainer>
-                <ActionButton onPress={() => {}}>
+                <ActionButton onPress={() => increment(item)}>
                   <FeatherIcon name="plus" color="#E83F5B" size={16} />
                 </ActionButton>
-                <ActionButton onPress={() => {}}>
+                <ActionButton onPress={() =>
+                  item.amount > 1 ?   decrement(item) : removeFromCart(item.id)
+                }>
                   <FeatherIcon name="minus" color="#E83F5B" size={16} />
                 </ActionButton>
               </ActionContainer>
