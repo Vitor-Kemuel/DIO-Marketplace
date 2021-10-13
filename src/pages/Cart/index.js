@@ -1,6 +1,9 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { View } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+
+import * as CartAction from '../../store/modules/cart/action'
 
 import {
   Container,
@@ -26,15 +29,9 @@ import formatValue from "../../utils/formatValue";
 import EmptyCart from "../../components/EmptyCart";
 
 export default function Cart() {
-  const [products, setProducts] = useState([
-    {
-      id: '1',
-      title: 'Assinatura Trimestral',
-      image_url: 'https://res.cloudinary.com/robertosousa1/image/upload/v1594492578/dio/quarterly_subscription_yjolpc.png',
-      quantity: 1,
-      price: 150,
-    },
-  ]);
+  const dispatch = useDispatch();
+
+  const products = useSelector(({ cart }) => cart)
 
   const cartSize = useMemo(() => {
     return products.length || 0;
@@ -42,7 +39,7 @@ export default function Cart() {
 
   const cartTotal = useMemo(() => {
     const cartAmount = products.reduce((acc, product) => {
-      const totalPrice = acc + (product.price * product.quantity);
+      const totalPrice = acc + (product.price * product.amount);
       return totalPrice;
     }, 0);
 
@@ -69,9 +66,9 @@ export default function Cart() {
                     {formatValue(item.price)}
                   </ProductSinglePrice>
                   <TotalContainer>
-                    <ProductQuantity>{`${item.quantity}x`}</ProductQuantity>
+                    <ProductQuantity>{`${item.amount}x`}</ProductQuantity>
                     <ProductPrice>
-                      {formatValue(item.price * item.quantity)}
+                      {formatValue(item.price * item.amount)}
                     </ProductPrice>
                   </TotalContainer>
                 </ProductPriceContainer>
